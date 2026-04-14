@@ -1,0 +1,182 @@
+.metricCard {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.metricCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+.iconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-container);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+[data-theme='dark'] .iconWrap {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.metricText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.value {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0;
+  color: var(--on-surface);
+}
+
+/* Status variants for MetricCard */
+.metric_success .iconWrap { color: var(--success); background: rgba(16, 185, 129, 0.1); }
+.metric_warning .iconWrap { color: var(--warning); background: rgba(245, 158, 11, 0.1); }
+.metric_danger .iconWrap { color: var(--error); background: rgba(220, 38, 38, 0.1); }
+
+/* AlertCard Component */
+.alertCard {
+  position: relative;
+  padding: 1.15rem;
+  border-radius: 1.25rem;
+  margin-bottom: 0.85rem;
+  display: flex;
+  gap: 1rem;
+  transition: all 0.2s;
+  border: 1px solid var(--outline-variant);
+}
+
+.alertCard:hover {
+  background: var(--surface-container-low);
+}
+
+.alert_danger {
+  background: #FFF1F2;
+  border-color: rgba(220, 38, 38, 0.1);
+}
+
+[data-theme='dark'] .alert_danger {
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.alert_warning {
+  background: #FFFBEB;
+  border-color: rgba(245, 158, 11, 0.1);
+}
+
+[data-theme='dark'] .alert_warning {
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.alert_success {
+  background: #F0FDF4;
+  border-color: rgba(16, 185, 129, 0.1);
+}
+
+[data-theme='dark'] .alert_success {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.alertContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.alertTitle {
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin: 0;
+  color: var(--on-surface);
+}
+
+.alertDesc {
+  font-size: 0.82rem;
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+.alertActions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.85rem;
+}
+
+/* SectionContainer */
+.sectionContainer {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+/* StatusBadge */
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+}
+
+.badge_success { background: #ECFDF5; color: #065F46; border-color: rgba(16, 185, 129, 0.2); }
+.badge_warning { background: #FFFBEB; color: #92400E; border-color: rgba(245, 158, 11, 0.2); }
+.badge_danger  { background: #FFF1F2; color: #991B1B; border-color: rgba(220, 38, 38, 0.2); }
+.badge_info    { background: #EFF6FF; color: #1E40AF; border-color: rgba(59, 130, 246, 0.2); }
+
+[data-theme='dark'] .badge_success { background: rgba(16, 185, 129, 0.1); color: #34D399; }
+[data-theme='dark'] .badge_warning { background: rgba(245, 158, 11, 0.1); color: #FBBF24; }
+[data-theme='dark'] .badge_danger  { background: rgba(220, 38, 38, 0.1); color: #F87171; }
+[data-theme='dark'] .badge_info    { background: rgba(59, 130, 246, 0.1); color: #60A5FA; }

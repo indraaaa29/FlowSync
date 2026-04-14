@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: transparent;
+  color: var(--on-surface);
+}
+
+.contentArea {
+  flex: 1;
+  margin-left: 260px; /* Sidebar width */
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Prevent flex children from overflowing */
+  width: 100%;
+}
+
+.topBar {
+  height: 64px;
+  background: var(--surface-container-lowest);
+  border-bottom: 1px solid var(--outline-variant);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0.75rem;
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: 99px;
+  color: var(--on-surface);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.userBadge:hover {
+  background: var(--surface-container-high);
+}
+
+.userName {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  background: transparent;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .contentArea {
+    margin-left: 0;
+  }
+}

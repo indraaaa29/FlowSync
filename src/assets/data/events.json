@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Global Tech Summit 2026",
+    "location": "Jakarta, Indonesia",
+    "attendees": 2500,
+    "status": "Live",
+    "category": "Tech",
+    "progress": 75
+  },
+  {
+    "id": 2,
+    "title": "Editorial Design Conference",
+    "location": "New York, USA",
+    "attendees": 800,
+    "status": "Upcoming",
+    "category": "Design",
+    "progress": 0
+  },
+  {
+    "id": 3,
+    "title": "Sustainability Expo",
+    "location": "Berlin, Germany",
+    "attendees": 4200,
+    "status": "Registration Open",
+    "category": "Science",
+    "progress": 30
+  }
+]

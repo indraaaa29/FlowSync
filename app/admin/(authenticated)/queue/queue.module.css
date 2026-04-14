@@ -1,0 +1,32 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+.header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.75rem; }
+.pageTitle { font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; }
+.pageSubtitle { font-size: 0.85rem; color: var(--on-surface-variant); margin-top: 0.15rem; }
+.liveIndicator { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 700; color: var(--success); background: var(--surface-container-low); border: 1px solid var(--outline-variant); padding: 0.4rem 0.9rem; border-radius: 999px; backdrop-filter: blur(4px); }
+.liveDot { width: 8px; height: 8px; background: var(--success); border-radius: 50%; box-shadow: 0 0 8px var(--success); animation: livePulse 2s infinite; }
+@keyframes livePulse { 0%,100% { transform: scale(1); opacity:1; } 50% { transform: scale(1.2); opacity:0.6; } }
+
+.summaryRow { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-bottom: 2rem; }
+.queueSections { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
+
+.queueItem { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--surface-container-low); border-radius: 1rem; margin-bottom: 0.6rem; }
+.queueInfo { display: flex; flex-direction: column; }
+.queueName { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem; }
+.paceDots { display: flex; gap: 3px; }
+.paceDot { width: 16px; height: 4px; border-radius: 2px; background: var(--surface-container-highest); }
+.paceDotActive { background: var(--primary); }
+.queueWait { font-family: var(--font-display); font-size: 1rem; font-weight: 800; }
+
+.actionPanel { background: var(--surface-container-lowest); border-radius: 1.5rem; padding: 2rem; text-align: center; border: 2px dashed rgba(0,58,160,0.2); margin-top: 1rem; }
+.actionPanel h4 { font-size: 1.1rem; font-weight: 700; margin: 0.75rem 0 0.5rem; color: var(--primary); }
+.actionPanel p { font-size: 0.85rem; color: var(--on-surface-variant); margin-bottom: 1.25rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+.actionBtn { background: var(--primary); color: white; border: none; padding: 0.75rem 2rem; border-radius: 999px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.3s; }
+.actionBtn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,58,160,0.25); }
+
+@media (max-width: 1100px) { .queueSections { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .summaryRow { grid-template-columns: 1fr; } }

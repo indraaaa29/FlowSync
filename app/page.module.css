@@ -1,0 +1,154 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--surface);
+  overflow: hidden;
+}
+
+.blobPanel {
+  flex: 1;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 6rem;
+}
+
+.logoIcon {
+  background: var(--primary);
+  color: var(--on-primary);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.heroContent {
+  margin-bottom: 3rem;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--on-surface);
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: var(--on-surface-variant);
+  max-width: 420px;
+}
+
+.gatewayGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+.gatewayCard {
+  background: var(--surface-container-low);
+  border: none;
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: left;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gatewayCard:hover {
+  background: var(--surface-container-high);
+  transform: translateX(12px);
+  box-shadow: var(--shadow-ambient);
+}
+
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  background: var(--primary-container);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardIcon span {
+  color: var(--primary);
+  font-size: 28px;
+}
+
+.cardInfo {
+  flex: 1;
+}
+
+.cardInfo h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.cardInfo p {
+  font-size: 0.9rem;
+  color: var(--on-surface-variant);
+}
+
+.visualPanel {
+  flex: 1;
+  background: var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  top: -100px;
+  right: -100px;
+  animation: float 20s infinite alternate linear;
+}
+
+.orb2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  bottom: 10%;
+  left: 20%;
+  animation: float 15s infinite alternate-reverse linear;
+}
+
+@keyframes float {
+  from { transform: translate(0, 0); }
+  to { transform: translate(50px, 100px); }
+}
+
+@media (max-width: 900px) {
+  .visualPanel { display: none; }
+  .hubPanel { padding: 2rem; }
+  .heroTitle { font-size: 3rem; }
+}

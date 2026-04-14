@@ -1,0 +1,321 @@
+:root {
+  /* LIGHT THEME (Default) */
+  --primary: #003aa0;
+  --on-primary: #ffffff;
+  --primary-container: #d8e2ff;
+  --on-primary-container: #001a41;
+  --primary-fixed-dim: #f0f4ff;
+  
+  --secondary: #006abc;
+  --on-secondary: #ffffff;
+  
+  --tertiary: #c62828;
+  --on-tertiary: #ffffff;
+  
+  --surface: #f7f9fb;
+  --on-surface: #1a1c1e;
+  --on-surface-variant: #44474e;
+  --surface-container-low: #f0f3f8;
+  --surface-container-lowest: #ffffff;
+  --surface-container: #edf0f7;
+  --surface-container-high: #e7eaf2;
+  --surface-container-highest: #e2e4eb;
+  
+  --outline: #74777f;
+  --outline-variant: #c4c6d0;
+  
+  --success: #059669;
+  --warning: #d97706;
+  --error: #dc2626;
+  
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  
+  --shadow-ambient: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-focused: 0 8px 24px rgba(0, 58, 160, 0.12);
+  
+  --font-display: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] {
+  --primary: #3b82f6; /* Modern Vibrant Blue */
+  --on-primary: #ffffff;
+  --primary-container: #1e3a8a;
+  --on-primary-container: #dbeafe;
+  --primary-fixed-dim: #1e293b;
+
+  --surface: #0f172a;           /* Deep Navy BG */
+  --on-surface: #f8fafc;        /* High Contrast White */
+  --on-surface-variant: #94a3b8; /* Professional Slate Gray */
+  
+  --surface-container-low: #1e293b;     /* Card background */
+  --surface-container-lowest: #0f172a;  /* Unified BG */
+  --surface-container: #1e293b;
+  --surface-container-high: #334155;    /* Hover state */
+  --surface-container-highest: #475569;
+  
+  --outline: #334155;
+  --outline-variant: #1e293b;           /* Very subtle borders */
+
+  --shadow-ambient: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-focused: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  
+  --tertiary: #fb7185; /* Soft Rose */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  background-color: var(--surface);
+  color: var(--on-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-container-low);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline);
+}
+
+/* -------------------------------------
+ * SEMANTIC ALERT SYSTEM
+ * Stripe/Linear style — subtle wash cards
+ * Only the icon gets the accent color.
+ * h2 (value) and p (label) inherit natural text.
+ * ------------------------------------- */
+
+/* DANGER / CRITICAL */
+.semanticAlert_danger {
+  background: #FFF1F2 !important;
+  border: 1px solid rgba(220, 38, 38, 0.22) !important;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.semanticAlert_danger > span.material-symbols-outlined,
+.semanticAlert_danger span.material-symbols-outlined { color: #DC2626 !important; }
+.semanticAlert_danger p { color: var(--on-surface-variant) !important; }
+.semanticAlert_danger h2 { color: #991B1B !important; }
+.semanticAlert_danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.1);
+  border-color: rgba(220, 38, 38, 0.4) !important;
+}
+[data-theme='dark'] .semanticAlert_danger {
+  background: rgba(220, 38, 38, 0.08) !important;
+  border-color: rgba(220, 38, 38, 0.25) !important;
+  box-shadow: none;
+}
+[data-theme='dark'] .semanticAlert_danger > span.material-symbols-outlined,
+[data-theme='dark'] .semanticAlert_danger span.material-symbols-outlined { color: #F87171 !important; }
+[data-theme='dark'] .semanticAlert_danger p { color: var(--on-surface-variant) !important; }
+[data-theme='dark'] .semanticAlert_danger h2 { color: #FCA5A5 !important; }
+[data-theme='dark'] .semanticAlert_danger:hover {
+  background: rgba(220, 38, 38, 0.12) !important;
+  border-color: rgba(220, 38, 38, 0.35) !important;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.08) !important;
+}
+
+/* WARNING */
+.semanticAlert_warning {
+  background: #FFFBEB !important;
+  border: 1px solid rgba(245, 158, 11, 0.22) !important;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.semanticAlert_warning > span.material-symbols-outlined,
+.semanticAlert_warning span.material-symbols-outlined { color: #D97706 !important; }
+.semanticAlert_warning p { color: var(--on-surface-variant) !important; }
+.semanticAlert_warning h2 { color: #92400E !important; }
+.semanticAlert_warning:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.4) !important;
+}
+[data-theme='dark'] .semanticAlert_warning {
+  background: rgba(245, 158, 11, 0.08) !important;
+  border-color: rgba(245, 158, 11, 0.25) !important;
+  box-shadow: none;
+}
+[data-theme='dark'] .semanticAlert_warning > span.material-symbols-outlined,
+[data-theme='dark'] .semanticAlert_warning span.material-symbols-outlined { color: #FBBF24 !important; }
+[data-theme='dark'] .semanticAlert_warning p { color: var(--on-surface-variant) !important; }
+[data-theme='dark'] .semanticAlert_warning h2 { color: #FDE68A !important; }
+[data-theme='dark'] .semanticAlert_warning:hover {
+  background: rgba(245, 158, 11, 0.12) !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.08) !important;
+}
+
+/* SUCCESS */
+.semanticAlert_success {
+  background: #F0FDF4 !important;
+  border: 1px solid rgba(16, 185, 129, 0.22) !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.semanticAlert_success > span.material-symbols-outlined,
+.semanticAlert_success span.material-symbols-outlined { color: #059669 !important; }
+.semanticAlert_success p { color: var(--on-surface-variant) !important; }
+.semanticAlert_success h2 { color: #065F46 !important; }
+.semanticAlert_success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.4) !important;
+}
+[data-theme='dark'] .semanticAlert_success {
+  background: rgba(16, 185, 129, 0.08) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+  box-shadow: none;
+}
+[data-theme='dark'] .semanticAlert_success > span.material-symbols-outlined,
+[data-theme='dark'] .semanticAlert_success span.material-symbols-outlined { color: #34D399 !important; }
+[data-theme='dark'] .semanticAlert_success p { color: var(--on-surface-variant) !important; }
+[data-theme='dark'] .semanticAlert_success h2 { color: #6EE7B7 !important; }
+[data-theme='dark'] .semanticAlert_success:hover {
+  background: rgba(16, 185, 129, 0.12) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.08) !important;
+}
+
+/* INFO */
+.semanticAlert_info {
+  background: #EFF6FF !important;
+  border: 1px solid rgba(59, 130, 246, 0.22) !important;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.semanticAlert_info > span.material-symbols-outlined,
+.semanticAlert_info span.material-symbols-outlined { color: #2563EB !important; }
+.semanticAlert_info p { color: var(--on-surface-variant) !important; }
+.semanticAlert_info h2 { color: #1E3A8A !important; }
+.semanticAlert_info:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.4) !important;
+}
+[data-theme='dark'] .semanticAlert_info {
+  background: rgba(59, 130, 246, 0.08) !important;
+  border-color: rgba(59, 130, 246, 0.25) !important;
+  box-shadow: none;
+}
+[data-theme='dark'] .semanticAlert_info > span.material-symbols-outlined,
+[data-theme='dark'] .semanticAlert_info span.material-symbols-outlined { color: #60A5FA !important; }
+[data-theme='dark'] .semanticAlert_info p { color: var(--on-surface-variant) !important; }
+[data-theme='dark'] .semanticAlert_info h2 { color: #93C5FD !important; }
+[data-theme='dark'] .semanticAlert_info:hover {
+  background: rgba(59, 130, 246, 0.12) !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.08) !important;
+}
+
+/* ─────────────────────────────────────────
+ * GLOBAL BADGE / PILL SYSTEM
+ * Use as: className="badge badge_success"
+ * ───────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.badge_success {
+  background: #ECFDF5;
+  color: #065F46;
+  border-color: rgba(16, 185, 129, 0.2);
+}
+[data-theme='dark'] .badge_success {
+  background: rgba(16, 185, 129, 0.12);
+  color: #A7F3D0;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.badge_warning {
+  background: #FFFBEB;
+  color: #78350F;
+  border-color: rgba(245, 158, 11, 0.2);
+}
+[data-theme='dark'] .badge_warning {
+  background: rgba(245, 158, 11, 0.12);
+  color: #FDE68A;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.badge_danger {
+  background: #FEE2E2;
+  color: #7F1D1D;
+  border-color: rgba(220, 38, 38, 0.2);
+}
+[data-theme='dark'] .badge_danger {
+  background: rgba(220, 38, 38, 0.12);
+  color: #FECACA;
+  border-color: rgba(220, 38, 38, 0.3);
+}
+
+.badge_info {
+  background: #EFF6FF;
+  color: #1E3A8A;
+  border-color: rgba(59, 130, 246, 0.2);
+}
+[data-theme='dark'] .badge_info {
+  background: rgba(59, 130, 246, 0.12);
+  color: #BFDBFE;
+  border-color: rgba(59, 130, 246, 0.3);
+}

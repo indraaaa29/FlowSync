@@ -1,0 +1,39 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+.header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.75rem; }
+.pageTitle { font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; }
+.pageSubtitle { font-size: 0.85rem; color: var(--on-surface-variant); margin-top: 0.15rem; }
+.liveIndicator { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 700; color: var(--success); background: var(--surface-container-low); border: 1px solid var(--outline-variant); padding: 0.4rem 0.9rem; border-radius: 999px; backdrop-filter: blur(4px); }
+.liveDot { width: 8px; height: 8px; background: var(--success); border-radius: 50%; box-shadow: 0 0 8px var(--success); animation: livePulse 2s infinite; }
+@keyframes livePulse { 0%,100% { transform: scale(1); opacity:1; } 50% { transform: scale(1.2); opacity:0.6; } }
+
+.peakRow { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; margin-bottom: 2rem; }
+.peakCard { background: var(--surface-container-lowest); border-radius: 1.5rem; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; transition: all 0.3s; }
+.peakCard:hover { transform: translateY(-3px); box-shadow: var(--shadow-ambient); }
+.peakIconWrap { width: 56px; height: 56px; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.peakIconWrap span { font-size: 2rem; }
+.peakLabel { font-size: 0.7rem; font-weight: 700; color: var(--on-surface-variant); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.2rem; }
+.peakValues { display: flex; align-items: baseline; gap: 0.5rem; }
+.peakValue { font-family: var(--font-display); font-size: 1.85rem; font-weight: 900; line-height: 1; letter-spacing: -0.02em; }
+.peakTime { font-size: 0.75rem; color: var(--on-surface-variant); font-weight: 700; }
+
+.chartCard { background: var(--surface-container-lowest); border-radius: 1.5rem; padding: 1.75rem; }
+.chartHeader { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+.cardTitle { display: flex; align-items: center; gap: 0.5rem; font-size: 1rem; font-weight: 700; margin: 0; }
+.legend { display: flex; gap: 1rem; margin-left: auto; }
+.legendItem { display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; font-weight: 600; color: var(--on-surface-variant); }
+.legendActual { width: 20px; height: 3px; background: #003aa0; border-radius: 2px; }
+.legendPredicted { width: 20px; height: 2px; border-top: 2px dashed rgba(0,58,160,0.35); }
+.timeFilters { display: flex; gap: 0.35rem; }
+.timeBtn { padding: 0.35rem 0.75rem; border-radius: 0.5rem; background: var(--surface-container-low); border: none; color: var(--on-surface-variant); font-size: 0.7rem; font-weight: 600; cursor: pointer; transition: 0.15s; }
+.timeBtn:hover { background: var(--surface-container); }
+.timeBtnActive { background: var(--primary); color: white; }
+.chartWrap { width: 100%; height: 340px; }
+.canvas { width: 100%; height: 100%; cursor: crosshair; }
+
+@media (max-width:1200px){.peakRow{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:768px){.main{margin-left:0;padding:1.5rem;}.peakRow{grid-template-columns:1fr;}}

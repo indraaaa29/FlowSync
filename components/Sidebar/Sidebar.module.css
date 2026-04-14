@@ -1,0 +1,262 @@
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: var(--surface-container-lowest);
+  border-right: 1px solid var(--outline-variant);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.logoArea {
+  padding: 2.5rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoIcon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--on-surface);
+  letter-spacing: -0.03em;
+}
+
+.nav {
+  flex: 1;
+  padding: 0 1rem;
+  overflow-y: auto;
+}
+
+.navGroup {
+  margin-bottom: 2rem;
+}
+
+.groupTitle {
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--on-surface-variant);
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.75rem;
+  border-radius: 10px;
+  color: var(--on-surface-variant);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 0.2rem;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  background: var(--surface-container-high);
+  color: var(--on-surface);
+}
+
+.active {
+  background: var(--primary-container) !important;
+  color: var(--primary) !important;
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+.active span {
+  color: var(--primary);
+}
+
+.linkLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.badge {
+  margin-left: auto;
+  background: var(--tertiary);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+.footer {
+  padding: 1.5rem 1rem;
+  border-top: 1px solid var(--outline-variant);
+}
+
+.userCard {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: 14px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: var(--primary-container);
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.userInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.userName {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userRole {
+  font-size: 0.7rem;
+  color: var(--on-surface-variant);
+}
+
+.logoutBtn {
+  background: transparent;
+  border: none;
+  color: var(--on-surface-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+  background: var(--surface-container-high);
+  color: var(--tertiary);
+}
+
+/* Modal Polish */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  padding: 2.5rem;
+  border-radius: 24px;
+  width: 400px;
+  max-width: 90vw;
+  text-align: center;
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.5);
+  animation: modalIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modalIconBox {
+  width: 64px;
+  height: 64px;
+  background: var(--surface-container-high);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--tertiary);
+}
+
+.modalContent h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: var(--on-surface);
+}
+
+.modalContent p {
+  font-size: 0.95rem;
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.modalActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.modalActions button {
+  flex: 1;
+  padding: 0.85rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  border: none;
+}
+
+.cancelBtn {
+  background: var(--surface-container-low);
+  color: var(--on-surface);
+  border: 1px solid var(--outline-variant) !important;
+}
+
+.cancelBtn:hover {
+  background: var(--surface-container-high);
+}
+
+.confirmBtn {
+  background: var(--tertiary);
+  color: white;
+}
+
+.confirmBtn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px -5px rgba(251, 113, 133, 0.3);
+}
