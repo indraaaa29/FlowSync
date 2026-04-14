@@ -9,11 +9,12 @@ interface MetricCardProps {
   icon: string;
   trend?: string;
   trendUp?: boolean;
+  status?: 'success' | 'warning' | 'danger' | 'info';
 }
 
-export const MetricCard = ({ label, value, icon, trend, trendUp }: MetricCardProps) => {
+export const MetricCard = ({ label, value, icon, trend, trendUp, status }: MetricCardProps) => {
   return (
-    <div className={styles.metricCard}>
+    <div className={`${styles.metricCard} ${status ? styles[`metricCard_${status}`] : ''}`}>
       <div className={styles.iconWrap}>
         <span className="material-symbols-outlined">{icon}</span>
       </div>

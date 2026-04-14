@@ -67,9 +67,10 @@
 }
 
 /* Status variants for MetricCard */
-.metric_success .iconWrap { color: var(--success); background: rgba(16, 185, 129, 0.1); }
-.metric_warning .iconWrap { color: var(--warning); background: rgba(245, 158, 11, 0.1); }
-.metric_danger .iconWrap { color: var(--error); background: rgba(220, 38, 38, 0.1); }
+.metricCard_success .iconWrap { color: var(--success); background: rgba(16, 185, 129, 0.1); }
+.metricCard_warning .iconWrap { color: var(--warning); background: rgba(245, 158, 11, 0.1); }
+.metricCard_danger .iconWrap { color: var(--error); background: rgba(220, 38, 38, 0.1); }
+.metricCard_info .iconWrap { color: var(--primary); background: rgba(59, 130, 246, 0.1); }
 
 /* AlertCard Component */
 .alertCard {
